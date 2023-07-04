@@ -150,8 +150,11 @@ $google balenaEtcher and download by yourself.
 ```
 ## Boot
 put your sd-card in your kv-260.
-username: ninox
-password: ninox
+
+* username: ninox
+
+* password: ninox
+
 **NOTE:We can set up an account in $XILINX_SOURCES/build/conf/petalinuxbsp.conf**
 ```
 EXTRA_USERS_PARAMS = "useradd -P ${username} ${password};"
