@@ -2,7 +2,7 @@
   Xilinx only provide a bsp and petalinux-tool to build its image. Now we will use yocto and bitbake to build an image. 
 **NOTE: Because we need to comply and build image, we need a few capacities(300GB or more).**
 ## Hardware
-* **Network Suggest**:
+* **Limit Suggest**:
 RAM >=8GB
 CPU >=4
 DISK >=300
@@ -78,7 +78,7 @@ cp -rf project-spec $XILINX_SOURCES
 We need to let our bitbake know what it should do. We need to add something in our local.conf.
 ```script=
 ## Copy them to local.conf
-cp local.conf >> $XILINX_SOURCES/build/conf/local.conf
+cp local.conf $XILINX_SOURCES/build/conf/local.conf
 ```
 ## Checking config file 
 In plnxtool.conf, Path for dts files may be wrong, so check this file and modify.
