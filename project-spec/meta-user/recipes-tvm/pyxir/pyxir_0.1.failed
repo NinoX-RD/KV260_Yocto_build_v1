@@ -1,0 +1,37 @@
+SUMMARY="pyxir installation"
+SECTION="PETALINUX/apps"
+LICENSE="MIT"
+LIC_FILES_CHKSUM="file://${COMMON_LICENSE_DIR}/MIT;md5=0835ade698e0bcf8506ecda2f7b4f302"
+
+inherit setuptools3
+inherit distutils3
+
+S="${WORKDIR}/git"
+
+SRCREV = "5d1d60f8191bd85c5e96a3ecbb95388ec857e659"
+
+SRC_URI = "git://github.com/Xilinx/pyxir.git;protocal=https;branch=rel-v0.3.3;"
+
+export GIT_SSL_NO_VERIFY="true"
+
+DEPENDS = "python3-setuptools python3-setuptools-native python3-numpy \
+                python3-packaging \
+                python3-pydot \
+                python3-h5py \
+"
+
+#EXTRA_OECONF_append = " --with-setuptools=/usr/lib/python3.8/site-packages"
+
+RDEPENDS_${PN} = "hdf5 python3-pip python3-cython python3-h5py python3-pillow"
+
+
+DISUTILS_BUILD_ARGS="--use_vart_edge_dpu"
+
+do_configure_prepend() {
+	cd ${S}
+        git submodule update --init --recursive
+}
+
+do_install_append() {
+	python3_setup_install --root=${D}
+}

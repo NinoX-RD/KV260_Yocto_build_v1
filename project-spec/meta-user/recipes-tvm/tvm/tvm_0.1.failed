@@ -1,0 +1,52 @@
+SUMMARY="tvm installation"
+SECTION="PETALINUX/apps"
+LICENSE="MIT"
+LIC_FILES_CHKSUM="file://${COMMON_LICENSE_DIR}/MIT;md5=0835ade698e0bcf8506ecda2f7b4f302"
+
+S="${WORKDIR}/git"
+
+SRCREV = "627e92e7c2261d3b2ed8111f13c298a54417084b"
+
+SRC_URI = "git://github.com/apache/tvm.git;protocal=https;branch=main"
+
+export GIT_SSL_NO_VERIFY="true"
+
+DEPENDS = "python3-numpy \
+		python3-packaging \
+		python3-pydot \
+		python3-h5py \
+		python3-setuptools \
+		cmake \
+"
+
+RDEPENDS_${PN} = "bash hdf5 python3-core python3-pip python3-cython python3-h5py python3-pillow"
+
+
+do_configure_prepend() {
+	cd ${S}
+	git submodule update --init --recursive
+}
+
+# configure the build using cmake
+do_configure() {
+	mkdir build
+	cp cmake/config.cmake build
+	echo "set(USE_VITIS_AI ON)" >> build/config.cmake
+	echo "set(USE_LLVM OFF)" >> build/config.cmake
+	cd build
+	cmake -DCMAKE_INSTALL_PREFIX=${D}${prefix} ../	
+}
+
+
+# build the project using cmake
+do_compile() {
+	cd build
+	make tvm_runtime -j$(nproc)
+}
+
+do_install() {
+	cd python
+	python3 setup.py install --prefix=${D}${prefix}
+}
+
+
