@@ -1,3 +1,7 @@
+# Update history
+  editor : chris
+  update : 2023/7/6
+
 # KV260_Yocto_build
   Xilinx only provide a bsp and petalinux-tool to build its image. Now we will use yocto and bitbake to build an image. 
 **NOTE: Because we need to comply and build image, we need a few capacities(300GB or more).**
