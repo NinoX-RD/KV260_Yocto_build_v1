@@ -164,3 +164,9 @@ put your sd-card in your kv-260.
 ```
 EXTRA_USERS_PARAMS = "useradd -P ${username} ${password};"
 ```
+
+# Referance
+
+* ROS 2 Humble in AMD KV260 with Yocto
+
+  https://www.hackster.io/vmayoral/ros-2-humble-in-amd-kv260-with-yocto-4ae062
