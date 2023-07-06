@@ -112,7 +112,7 @@ I've encountered this error many times, and I don't actually know what's causing
 3. Change plnxtool.conf XILINX_SDK_TOOLCHAIN to their tools.
 In this case, we need to install petalinux-tool in their website
 
-https://www.xilinx.com/products/design-tools/embedded-software/petalinux-sdk.html#licensing
+  https://www.xilinx.com/products/design-tools/embedded-software/petalinux-sdk.html#licensing
 
 ### Debug
 1. hashserve.sock: [Errno 2] No such file or directory
