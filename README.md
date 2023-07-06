@@ -111,10 +111,13 @@ For me, I often got an error (fsbl-firmware & pmu-firmware do-configuration erro
 I've encountered this error many times, and I don't actually know what's causing the failure. When I'm successful, I execute for a long time.
 3. Change plnxtool.conf XILINX_SDK_TOOLCHAIN to their tools.
 In this case, we need to install petalinux-tool in their website
+
 https://www.xilinx.com/products/design-tools/embedded-software/petalinux-sdk.html#licensing
+
 ### Debug
 1. hashserve.sock: [Errno 2] No such file or directory
-https://community.toradex.com/t/yocto-reference-build-for-custom-application-development-failing-because-of-error-in-contacting-hash-equivalence-server/13832
+
+   https://community.toradex.com/t/yocto-reference-build-for-custom-application-development-failing-because-of-error-in-contacting-hash-equivalence-server/13832
  
 ## Package image
 Here, we will write wic setting in rootfs.wks and put it in wic default place.
