@@ -108,10 +108,11 @@ bitbake petalinux-image-minimal
 ```
 For me, I often got an error (fsbl-firmware & pmu-firmware do-configuration error), You can try those methods to solve it.
 1. Waiting for finish without interrupt.
-I've encountered this error many times, and I don't actually know what's causing the failure. When I'm successful, I execute for a long time.
-3. Change plnxtool.conf XILINX_SDK_TOOLCHAIN to their tools.
-  In this case, we need to install petalinux-tool in their website
 
+  I've encountered this error many times, and I don't actually know what's causing the failure. When I'm successful, I execute for a long time.
+3. Change plnxtool.conf XILINX_SDK_TOOLCHAIN to their tools.
+
+  In this case, we need to install petalinux-tool in their website 
   https://www.xilinx.com/products/design-tools/embedded-software/petalinux-sdk.html#licensing
 
 ### Debug
