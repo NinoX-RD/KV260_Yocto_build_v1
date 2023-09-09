@@ -170,4 +170,7 @@ put your sd-card in your kv-260.
 EXTRA_USERS_PARAMS = "useradd -P ${username} ${password};"
 ```
 
+## Referance
 
+Linux Kernel 之十一Yocto、OpenEmbedded、BitBake 詳解
+https://blog.csdn.net/ZCShouCSDN/article/details/123845510
